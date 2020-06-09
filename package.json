@@ -9,15 +9,15 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot --prod  --proxy-config proxy.conf.json",
-    "heroku-postbuild": "ng build --prod --proxy-config proxy.conf.json",
+    "postinstall": "ng build --aot --prod",
+    "heroku-postbuild": "ng build --prod",
     "prerender": "ng run autumn-bot-web:prerender"
   },
   "engines": {
     "node": "13.6.0",
     "npm": "6.13.4"
   },
-  "proxyConfig": "src/proxy.conf.json",
+  "proxyConfig": "/proxy.conf.json",
   "private": true,
   "dependencies": {
     "@alyle/ui": "^3.2.6",
