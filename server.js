@@ -1,9 +1,11 @@
 const path = require("path");
 const express = require("express");
 const app = express();
-app.use(express.static(__dirname + "/dist/autumn-bot-web"));
+app.use(express.static(__dirname + "/dist/autumn-bot-web/browser"));
 app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "dist/autumn-bot-web", "index.html"));
+  res.sendFile(
+    path.join(__dirname, "dist/autumn-bot-web/browser", "index.html")
+  );
 });
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 8080);
