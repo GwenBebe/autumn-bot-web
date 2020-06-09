@@ -1,7 +1,15 @@
 const path = require("path");
 const express = require("express");
+const { createProxyMiddleware } = require("http-proxy-middleware");
 const app = express();
 app.use(express.static(__dirname + "/dist/autumn-bot-web/browser"));
+app.use(
+  "/api",
+  createProxyMiddleware({
+    target: "http://api.autumnbot.net",
+    changeOrigin: true,
+  })
+);
 app.get("/*", function (req, res) {
   res.sendFile(
     path.join(__dirname, "dist/autumn-bot-web/browser", "index.html")
