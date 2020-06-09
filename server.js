@@ -7,7 +7,7 @@ app.use(
   "/api",
   createProxyMiddleware({
     target: "https://api.autumnbot.net",
-    changeOrigin: true,
+    changeOrigin: false,
   })
 );
 app.get("/*", function (req, res) {
