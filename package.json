@@ -9,8 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot --prod",
-    "heroku-postbuild": "ng build --prod",
+    "postinstall": "ng build --aot --prod  --proxy-config proxy.conf.json",
+    "heroku-postbuild": "ng build --prod --proxy-config proxy.conf.json",
     "prerender": "ng run autumn-bot-web:prerender"
   },
   "engines": {
