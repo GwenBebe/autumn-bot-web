@@ -6,7 +6,7 @@ app.use(express.static(__dirname + "/dist/autumn-bot-web/browser"));
 app.use(
   "/api",
   createProxyMiddleware({
-    target: "http://api.autumnbot.net",
+    target: "https://api.autumnbot.net",
     changeOrigin: true,
   })
 );
@@ -17,3 +17,4 @@ app.get("/*", function (req, res) {
 });
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 8080);
+console.log(`Listening on port ${process.env.PORT || 8080}`);
