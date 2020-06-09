@@ -1,5 +1,5 @@
 import { Component, AfterViewInit, OnInit } from '@angular/core';
-import { DiscordService, userinfo } from '../discord.service';
+import { DiscordService, User } from '../discord.service';
 
 @Component({
   selector: 'app-account',
@@ -8,7 +8,7 @@ import { DiscordService, userinfo } from '../discord.service';
 })
 export class AccountComponent implements OnInit {
   loggedIn = false;
-  userinfo: userinfo | undefined;
+  userinfo: User | undefined;
   avatarUrl = '';
   username = '';
   discriminator = '';
@@ -24,9 +24,13 @@ export class AccountComponent implements OnInit {
   }
 
   login() {
-    this.discordService.getUserInfo().subscribe((userinfo) => {
-      if (userinfo.message === 'SUCCESS') {
-        this.userinfo = userinfo.data;
+    this.discordService.getUserInfo().subscribe((res) => {
+      if (res.status === 'success') {
+        console.log(res);
+
+        const userinfo: User = res.data;
+
+        this.userinfo = userinfo;
         this.updateInfo();
       } else window.location.href = `http://localhost:3000/api/discord/login`;
     });
@@ -37,9 +41,11 @@ export class AccountComponent implements OnInit {
   }
 
   private autoLogin() {
-    this.discordService.getUserInfo().subscribe((userinfo) => {
-      if (userinfo.message === 'SUCCESS') {
-        this.userinfo = userinfo.data;
+    this.discordService.getUserInfo().subscribe((res) => {
+      if (res.status === 'success') {
+        const userinfo: User = res.data;
+
+        this.userinfo = userinfo;
         this.updateInfo();
       }
     });
@@ -52,9 +58,13 @@ export class AccountComponent implements OnInit {
 
     let ext = 'png';
 
-    if (avatarHash.startsWith('a_')) ext = 'gif';
+    if (avatarHash?.startsWith('a_')) ext = 'gif';
 
-    this.avatarUrl = `https://cdn.discordapp.com/avatars/${this.userinfo.id}/${this.userinfo.avatar}.${ext}?size=128`;
+    this.avatarUrl = this.userinfo.avatar
+      ? `https://cdn.discordapp.com/avatars/${this.userinfo.id}/${this.userinfo.avatar}.${ext}?size=128`
+      : `https://cdn.discordapp.com/embed/avatars/${
+          parseInt(this.userinfo.discriminator) % 5
+        }.png`;
 
     this.username = this.userinfo.username;
 

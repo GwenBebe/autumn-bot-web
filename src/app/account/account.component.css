@@ -6,3 +6,7 @@
 #username {
   padding: 10px;
 }
+
+#dashboardBtn {
+  text-decoration: none;
+}

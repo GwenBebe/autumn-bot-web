@@ -1,0 +1,39 @@
+<div id="moderation">
+  <h2>Moderation Settings</h2>
+  <form [formGroup]="moderation">
+    <mat-form-field
+      appearance="outline"
+      matTooltipPosition="left"
+      matTooltip="Channel where moderation events are logged"
+    >
+      <mat-label>Mod Log Channel</mat-label>
+      <mat-select formControlName="modLog">
+        <mat-option *ngFor="let channel of channels" [value]="channel.id">
+          #{{ channel.name }}
+        </mat-option>
+        <mat-optgroup *ngFor="let cat of categories" [label]="cat.name">
+          <mat-option *ngFor="let channel of cat.channels" [value]="channel.id">
+            #{{ channel.name }}
+          </mat-option>
+        </mat-optgroup>
+      </mat-select>
+    </mat-form-field>
+  </form>
+
+  <button
+    class="generalFormField"
+    color="primary"
+    mat-raised-button
+    (click)="save()"
+    *ngIf="!saving"
+  >
+    Save
+  </button>
+  <mat-spinner
+    *ngIf="saving"
+    id="guilds-loading"
+    [diameter]="36"
+    color="accent"
+    id="saving"
+  ></mat-spinner>
+</div>

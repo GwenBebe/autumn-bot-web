@@ -1,0 +1,26 @@
+<div class="module">
+  <div class="moduleName">
+    {{ name }}
+  </div>
+  <div class="moduleDesc">
+    {{ description }}
+  </div>
+  <mat-slide-toggle
+    [matTooltip]="'Toggle ' + name"
+    class="toggle"
+    matTooltipPosition="left"
+    [formControl]="enabledForm"
+    (click)="toggle()"
+  ></mat-slide-toggle>
+  <button
+    [matTooltip]="name + ' Settings'"
+    matTooltipPosition="right"
+    mat-raised-button
+    color="primary"
+    class="settings"
+    [disabled]="!enabledForm.value"
+    [routerLink]="'/dashboard/' + guild.id + '/' + identifier"
+  >
+    Settings
+  </button>
+</div>

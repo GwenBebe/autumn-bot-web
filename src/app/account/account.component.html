@@ -4,7 +4,9 @@
 
 <div *ngIf="loggedIn">
   <mat-menu #pfMenu="matMenu" xPosition="before">
-    <button mat-menu-item><mat-icon>dashboard</mat-icon>Dashboard</button>
+    <a routerLink="/dashboard" id="dashboardBtn"
+      ><button mat-menu-item><mat-icon>dashboard</mat-icon>Dashboard</button></a
+    >
     <button mat-menu-item color="warn" (click)="logout()">
       <mat-icon>exit_to_app</mat-icon>Logout
     </button>

@@ -10,3 +10,42 @@ body {
   color: white;
   text-align: center;
 }
+
+.mat-tab-label-content {
+  color: white;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: rgba(255, 255, 255, 0.42);
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label {
+  color: rgba(255, 255, 255, 0.54);
+}
+
+.mat-select-value {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.mat-form-field-label {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: rgba(255, 255, 255, 0.185);
+}
+
+.mat-input-element::placeholder {
+  color: rgba(255, 255, 255, 0.42);
+}
+.mat-select-arrow {
+  color: rgba(255, 255, 255, 0.54);
+}
+
+code {
+  font-family: monospace;
+  background-color: #58585881;
+  color: #e0e0e0;
+  padding: 2px;
+  border-radius: 2px;
+}

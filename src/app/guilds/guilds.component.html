@@ -1,1 +1,17 @@
-<p>guilds works!</p>
+<h1 id="selectGuild">Select a Server</h1>
+<ul id="guilds">
+  <mat-spinner
+    *ngIf="!guilds"
+    id="guilds-loading"
+    [diameter]="50"
+    color="accent"
+  ></mat-spinner>
+  <li *ngFor="let guild of guilds">
+    <app-guild
+      [name]="guild.name"
+      [iconHash]="guild.icon"
+      [id]="guild.id"
+      [guildInfo]="guild"
+    ></app-guild>
+  </li>
+</ul>

@@ -1,0 +1,17 @@
+<mat-progress-bar
+  *ngIf="!guild"
+  mode="indeterminate"
+  color="accent"
+></mat-progress-bar>
+
+<div class="guild" *ngIf="guild">
+  <app-guild-nav [guild]="guild"></app-guild-nav>
+  <mat-tab-group [dynamicHeight]="true">
+    <mat-tab class="tab" label="Settings"
+      ><app-general-settings [guild]="guild"></app-general-settings
+    ></mat-tab>
+    <mat-tab class="tab" label="Modules"
+      ><app-modules [guild]="guild"></app-modules
+    ></mat-tab>
+  </mat-tab-group>
+</div>
