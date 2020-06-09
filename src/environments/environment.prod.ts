@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'htps://api.autumnbot.net',
+  apiUrl: 'https://api.autumnbot.net',
 };
