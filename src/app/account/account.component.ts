@@ -32,12 +32,12 @@ export class AccountComponent implements OnInit {
 
         this.userinfo = userinfo;
         this.updateInfo();
-      } else window.location.href = `http://localhost:3000/api/discord/login`;
+      } else window.location.href = `/api/discord/login`;
     });
   }
 
   logout() {
-    window.location.href = 'http://localhost:3000/api/discord/logout';
+    window.location.href = '/api/discord/logout';
   }
 
   private autoLogin() {
