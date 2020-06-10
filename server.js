@@ -7,7 +7,10 @@ app.use(express.static(__dirname + "/dist/autumn-bot-web/browser"));
 app.use(
   "/api",
   createProxyMiddleware({
-    target: "http://localhost:3000",
+    target:
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:3000"
+        : "https://api.autumnbot.net",
     changeOrigin: true,
     cookieDomainRewrite: {
       "api.autumnbot.net": "www.autumnbot.net",
