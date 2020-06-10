@@ -28,13 +28,15 @@ export class GeneralSettingsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.prefix = new FormControl(this.guild.settings.general.prefix);
+    if (!this.guild.settings.general) this.guild.settings.general = {};
+
+    this.prefix = new FormControl(this.guild.settings.general?.prefix);
     this.deleteCommands = new FormControl(
-      this.guild.settings.general.deleteCommands
+      this.guild.settings.general?.deleteCommands
     );
-    this.memberRole = new FormControl(this.guild.settings.general.memberRole);
+    this.memberRole = new FormControl(this.guild.settings.general?.memberRole);
     this.memeResponses = new FormControl(
-      this.guild.settings.general.memeResponses
+      this.guild.settings.general?.memeResponses
     );
     this.general = new FormGroup({
       prefix: this.prefix,
@@ -43,7 +45,7 @@ export class GeneralSettingsComponent implements OnInit {
       memeResponses: this.memeResponses,
     });
 
-    this.selectedMemberRole = this.guild.settings.general.memberRole;
+    this.selectedMemberRole = this.guild.settings.general?.memberRole;
 
     console.log(this.general.value);
 

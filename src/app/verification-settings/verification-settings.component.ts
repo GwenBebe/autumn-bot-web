@@ -46,31 +46,35 @@ export class VerificationSettingsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    if (!this.guild.settings.verification.enabled)
+    if (!this.guild.settings.verification)
+      this.guild.settings.verification = {};
+    if (!this.guild.settings.verification?.enabled)
       this.location.replaceState(`/dashboard/${this.guild.id}`);
 
-    this.verifyDesc = `Have staff manually verify application messages. Doesn't require users to send ${this.guild.settings.general.prefix}verify to be verified.`;
+    this.verifyDesc = `Have staff manually verify application messages. Doesn't require users to send ${
+      this.guild.settings.general?.prefix || '-'
+    }verify to be verified.`;
 
     this.manualVerify = new FormControl(
-      this.guild.settings.verification.manualVerify
+      this.guild.settings.verification?.manualVerify
     );
     this.pingStaff = new FormControl(
-      this.guild.settings.verification.pingStaff
+      this.guild.settings.verification?.pingStaff
     );
     this.nonVerifiedChannels = new FormControl(
-      this.guild.settings.verification.nonVerifiedChannels
+      this.guild.settings.verification?.nonVerifiedChannels
     );
     this.verifyMessage = new FormControl(
-      this.guild.settings.verification.verifyMessage
+      this.guild.settings.verification?.verifyMessage
     );
     this.denyMessage = new FormControl(
-      this.guild.settings.verification.denyMessage
+      this.guild.settings.verification?.denyMessage
     );
     this.acceptMessage = new FormControl(
-      this.guild.settings.verification.acceptMessage
+      this.guild.settings.verification?.acceptMessage
     );
     this.staffRole = new FormControl(
-      this.guild.settings.verification.staffRole,
+      this.guild.settings.verification?.staffRole,
       [Validators.required]
     );
 
@@ -84,7 +88,7 @@ export class VerificationSettingsComponent implements OnInit {
       pingStaff: this.pingStaff,
     });
 
-    this.selectedStaffRole = this.guild.settings.verification.staffRole;
+    this.selectedStaffRole = this.guild.settings.verification?.staffRole;
 
     this.guild.roles.forEach((role) => {
       if (!role.managed) this.roles.push(role);
@@ -147,6 +151,7 @@ export class VerificationSettingsComponent implements OnInit {
     settings.verification.verifyMessage = updated.verifyMessage;
     settings.verification.nonVerifiedChannels = updated.nonVerifiedChannels;
     settings.verification.staffRole = updated.staffRole;
+    settings.verification.manualVerify = updated.manualVerify;
     settings.verification.acceptMessage = updated.acceptMessage;
     settings.verification.denyMessage = updated.denyMessage;
     settings.verification.pingStaff = updated.pingStaff;

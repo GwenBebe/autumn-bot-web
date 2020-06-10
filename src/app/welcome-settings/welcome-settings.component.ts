@@ -42,20 +42,22 @@ export class WelcomeSettingsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    if (!this.guild.settings.welcome) this.guild.settings.welcome = {};
+    if (!this.guild.settings.general) this.guild.settings.general = {};
     if (!this.guild.settings.welcome.enabled) this.location.back();
     console.log(this.guild.settings.welcome);
 
     this.welcomeChannel = new FormControl(
-      this.guild.settings.welcome.welcomeChannel
+      this.guild.settings.welcome?.welcomeChannel
     );
     this.backgroundColor = new FormControl(
-      this.guild.settings.welcome.backgroundColor || '#2b2929'
+      this.guild.settings.welcome?.backgroundColor || '#2b2929'
     );
     this.textColor = new FormControl(
-      this.guild.settings.welcome.textColor || '#ffffff'
+      this.guild.settings.welcome?.textColor || '#ffffff'
     );
     this.profileColor = new FormControl(
-      this.guild.settings.welcome.profileColor || '#eb4034'
+      this.guild.settings.welcome?.profileColor || '#eb4034'
     );
 
     this.welcome = new FormGroup({

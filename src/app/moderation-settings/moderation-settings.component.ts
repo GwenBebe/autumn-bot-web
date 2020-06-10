@@ -34,6 +34,8 @@ export class ModerationSettingsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    if (!this.guild.settings.moderation) this.guild.settings.moderation = {};
+
     if (!this.guild.settings.moderation.enabled)
       this.location.replaceState(`/dashboard/${this.guild.id}`);
 

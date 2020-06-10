@@ -21,11 +21,7 @@
       matTooltip="Channels accessible by non-verified users."
     >
       <mat-label>Non-Verified Channels</mat-label>
-      <mat-select
-        formControlName="nonVerifiedChannels"
-        [(value)]="selectedStaffRole"
-        multiple
-      >
+      <mat-select formControlName="nonVerifiedChannels" multiple>
         <mat-option *ngFor="let channel of channels" [value]="channel.id">
           #{{ channel.name }}
         </mat-option>
