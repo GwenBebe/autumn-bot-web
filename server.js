@@ -7,9 +7,9 @@ app.use(
   "/api",
   createProxyMiddleware({
     target: "https://api.autumnbot.net",
-    changeOrigin: false,
+    changeOrigin: true,
     cookieDomainRewrite: {
-      "api.autumnbot.net": "www.autumnbot.net",
+      "api.autumnbot.net": "localhost:8080",
     },
   })
 );
