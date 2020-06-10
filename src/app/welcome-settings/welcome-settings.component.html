@@ -1,4 +1,5 @@
 <div id="welcome">
+  <h2>Welcome Settings</h2>
   <img
     [src]="
       'https://api.autumn-forest.net/api/v1/cards/style1?textColor=' +
@@ -7,7 +8,7 @@
       encodeURIComponent(this.backgroundColor.value) +
       '&profileColor=' +
       encodeURIComponent(this.profileColor.value) +
-      '&profileBackground=' +
+      '&backgroundImage=' +
       encodeURIComponent(
         this.guild.settings.welcome.profileBackground ||
           'https://i.imgur.com/GIU4FsK.jpg'
@@ -16,7 +17,6 @@
     alt="Card Preview"
     height="200px"
   />
-  <h2>Welcome Settings</h2>
   <form [formGroup]="welcome">
     <mat-form-field
       appearance="outline"
@@ -24,7 +24,10 @@
       matTooltip="Channel where welcome cards are sent."
     >
       <mat-label>Welcome Channel</mat-label>
-      <mat-select formControlName="welcomeChannel">
+      <mat-select
+        formControlName="welcomeChannel"
+        [(value)]="guild.settings.welcome.welcomeChannel"
+      >
         <mat-option *ngFor="let channel of channels" [value]="channel.id">
           #{{ channel.name }}
         </mat-option>
