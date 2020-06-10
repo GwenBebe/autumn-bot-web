@@ -3,7 +3,7 @@ const express = require("express");
 const { createProxyMiddleware } = require("http-proxy-middleware");
 const app = express();
 app.use(express.static(__dirname + "/dist/autumn-bot-web/browser"));
-
+console.log(process.env.NODE_ENV);
 app.use(
   "/api",
   createProxyMiddleware({

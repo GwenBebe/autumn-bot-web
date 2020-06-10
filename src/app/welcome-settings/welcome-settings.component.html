@@ -1,10 +1,21 @@
 <div id="welcome">
-  <img [src]=" 'https://api.autumn-forest.net/api/v1/cards/style1?textColor=' +
-  encodeURIComponent(this.textColor.value) + '&backgroundColor=' +
-  encodeURIComponent(this.backgroundColor.value) + '&profileColor=' +
-  encodeURIComponent(this.profileColor.value) + '&profileBackground=' +
-  encodeURIComponent(this.settings.welcome.profileBackground ||
-  "https://i.imgur.com/GIU4FsK.jpg") " alt="Card Preview" height="200px" />
+  <img
+    [src]="
+      'https://api.autumn-forest.net/api/v1/cards/style1?textColor=' +
+      encodeURIComponent(this.textColor.value) +
+      '&backgroundColor=' +
+      encodeURIComponent(this.backgroundColor.value) +
+      '&profileColor=' +
+      encodeURIComponent(this.profileColor.value) +
+      '&profileBackground=' +
+      encodeURIComponent(
+        this.guild.settings.welcome.profileBackground ||
+          'https://i.imgur.com/GIU4FsK.jpg'
+      )
+    "
+    alt="Card Preview"
+    height="200px"
+  />
   <h2>Welcome Settings</h2>
   <form [formGroup]="welcome">
     <mat-form-field
