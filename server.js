@@ -19,8 +19,6 @@ app.use(
 );
 
 app.get("/*", function (req, res) {
-  console.log("GANG GANG");
-  console.log(req.cookies);
   res.sendFile(
     path.join(__dirname, "dist/autumn-bot-web/browser", "index.html")
   );
