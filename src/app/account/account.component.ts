@@ -1,5 +1,6 @@
 import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { DiscordService, User } from '../discord.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-account',
@@ -32,12 +33,12 @@ export class AccountComponent implements OnInit {
 
         this.userinfo = userinfo;
         this.updateInfo();
-      } else window.location.href = `/api/discord/login`;
+      } else window.location.href = `${environment.apiUrl}/api/discord/login`;
     });
   }
 
   logout() {
-    window.location.href = '/api/discord/logout';
+    window.location.href = `${environment.apiUrl}/api/discord/logout`;
   }
 
   private autoLogin() {

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 type Snowflake = string;
 
@@ -192,13 +193,13 @@ export interface ApiResponse {
   providedIn: 'root',
 })
 export class DiscordService {
-  private userinfoUrl = `/api/discord/userinfo`;
-  private userguildsUrl = `/api/discord/userguilds`;
+  private userinfoUrl = `${environment.apiUrl}/api/discord/userinfo`;
+  private userguildsUrl = `${environment.apiUrl}/api/discord/userguilds`;
   private guildUrl = (guild: string) => {
-    return `/api/discord/guild/${guild}`;
+    return `${environment.apiUrl}/api/discord/guild/${guild}`;
   };
   private updateUrl = (guild: string) => {
-    return `/api/discord/update/${guild}`;
+    return `${environment.apiUrl}/api/discord/update/${guild}`;
   };
 
   constructor(private http: HttpClient) {}
