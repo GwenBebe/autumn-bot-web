@@ -9,7 +9,7 @@ app.use(
     target: "https://api.autumnbot.net",
     changeOrigin: true,
     cookieDomainRewrite: {
-      "api.autumnbot.net": "localhost:8080",
+      "api.autumnbot.net": "www.autumnbot.net",
     },
   })
 );
