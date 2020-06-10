@@ -193,13 +193,13 @@ export interface ApiResponse {
   providedIn: 'root',
 })
 export class DiscordService {
-  private userinfoUrl = `${environment.apiUrl}/api/discord/userinfo`;
-  private userguildsUrl = `${environment.apiUrl}/api/discord/userguilds`;
+  private userinfoUrl = `/api/discord/userinfo`;
+  private userguildsUrl = `/api/discord/userguilds`;
   private guildUrl = (guild: string) => {
-    return `${environment.apiUrl}/api/discord/guild/${guild}`;
+    return `/api/discord/guild/${guild}`;
   };
   private updateUrl = (guild: string) => {
-    return `${environment.apiUrl}/api/discord/update/${guild}`;
+    return `/api/discord/update/${guild}`;
   };
 
   constructor(private http: HttpClient) {}
