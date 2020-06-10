@@ -9,6 +9,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "dev:ssr": "ng run autumn-bot-web:serve-ssr",
+    "serve:ssr": "node dist/autumn-bot-web/server/main.js",
+    "build:ssr": "ng build --prod && ng run autumn-bot-web:server:production",
     "postinstall": "ng build --aot --prod",
     "heroku-postbuild": "ng build --prod",
     "prerender": "ng run autumn-bot-web:prerender"
