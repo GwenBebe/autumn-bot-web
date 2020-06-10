@@ -33,12 +33,12 @@ export class AccountComponent implements OnInit {
 
         this.userinfo = userinfo;
         this.updateInfo();
-      } else window.location.href = `${environment.apiUrl}/api/discord/login`;
+      } else window.location.href = `/api/discord/login`;
     });
   }
 
   logout() {
-    window.location.href = `${environment.apiUrl}/api/discord/logout`;
+    window.location.href = `/api/discord/logout`;
   }
 
   private autoLogin() {

@@ -30,7 +30,7 @@ export class GuildPageComponent implements OnInit {
           this.guild = data;
         } else {
           if (res.message === 'Unauthorized')
-            return (window.location.href = `/home`);
+            return (window.location.href = `/dashboard`);
           else
             return this.snackbar.open(
               `${res.statusCode}: ${res.message || 'No Error Message'}`,
