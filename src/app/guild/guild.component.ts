@@ -30,7 +30,7 @@ export class GuildComponent implements OnInit {
 
   invite() {
     window.open(
-      `http://localhost:4200/api/discord/invite/${this.id}`,
+      `https://www.autumnbot.net/api/discord/invite/${this.id}`,
       'popup',
       'width=600,height=600'
     );
