@@ -23,3 +23,17 @@ mat-form-field {
 .colorPicker {
   width: 30%;
 }
+
+#cardPreview {
+  text-align: center;
+  position: relative;
+  right: -50%;
+  transform: translateX(-50%);
+  width: 500px;
+}
+
+@media only screen and (max-width: 600px) {
+  #cardPreview {
+    width: 100%;
+  }
+}

@@ -34,6 +34,10 @@ export class ModerationSettingsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.fetchSettings();
+  }
+
+  fetchSettings() {
     if (!this.guild.settings.moderation) this.guild.settings.moderation = {};
 
     if (!this.guild.settings.moderation.enabled)
@@ -117,6 +121,7 @@ export class ModerationSettingsComponent implements OnInit {
             }
           );
 
+        this.fetchSettings();
         this.snackbar.open('Saved Changes', 'Close', {
           duration: 5000,
           verticalPosition: 'top',

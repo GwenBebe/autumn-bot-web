@@ -28,6 +28,10 @@ export class GeneralSettingsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.fetchSettings();
+  }
+
+  fetchSettings() {
     if (!this.guild.settings.general) this.guild.settings.general = {};
 
     this.prefix = new FormControl(this.guild.settings.general?.prefix);
@@ -93,6 +97,7 @@ export class GeneralSettingsComponent implements OnInit {
           verticalPosition: 'top',
           horizontalPosition: 'center',
         });
+        this.fetchSettings();
       });
   }
 }

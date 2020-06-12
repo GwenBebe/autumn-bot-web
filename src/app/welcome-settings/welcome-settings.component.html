@@ -1,6 +1,7 @@
 <div id="welcome">
   <h2>Welcome Settings</h2>
   <img
+    id="cardPreview"
     [src]="
       'https://api.autumn-forest.net/api/v1/cards/style1?textColor=' +
       encodeURIComponent(this.textColor.value) +
@@ -15,7 +16,6 @@
       )
     "
     alt="Card Preview"
-    height="200px"
   />
   <form [formGroup]="welcome">
     <mat-form-field
