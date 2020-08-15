@@ -9,7 +9,7 @@ EXPOSE 8080
 COPY package.json /src/package.json
 RUN npm install
 
-RUN npm build
+RUN npm run build
 
 COPY . /src
 
