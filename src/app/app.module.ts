@@ -19,7 +19,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RedirectComponent } from './redirect/redirect.component';
-import { MinimaDark } from '@alyle/ui/themes/minima';
 import { GuildComponent } from './guild/guild.component';
 import { GuildsComponent } from './guilds/guilds.component';
 import { GuildPageComponent } from './guild-page/guild-page.component';
