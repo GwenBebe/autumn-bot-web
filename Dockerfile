@@ -19,4 +19,6 @@ RUN npm install
 
 COPY . /src
 
+RUN ls
+
 CMD npm start
