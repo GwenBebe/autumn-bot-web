@@ -1,0 +1,36 @@
+#guilds-loading {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#guilds {
+  list-style-type: none;
+  padding: 0 0px;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+app-guild {
+  max-width: 100px;
+}
+
+#selectGuild {
+  text-align: left;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 25px 0px;
+  border-bottom: 1px solid white;
+  margin-bottom: 25px;
+  width: 50%;
+}
+
+@media only screen and (max-width: 920px) {
+  #guilds {
+    width: 90%;
+  }
+
+  #selectGuild {
+    width: 90%;
+  }
+}

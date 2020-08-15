@@ -1,0 +1,153 @@
+.head {
+  text-align: center;
+  grid-area: header;
+  height: auto;
+  padding: 35vh;
+  background-image: url("../../assets/images/background.png");
+  background-position: bottom;
+}
+
+.head > a > button {
+  height: 70px;
+  font-size: 40px;
+  text-align: center;
+  margin: 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#description {
+  font-size: 20px;
+  padding: 3px;
+}
+
+#leaf {
+  float: left;
+  height: 100px;
+}
+
+.name {
+  font-weight: 100 !important;
+  min-height: 100%;
+  display: inline-block;
+}
+
+#title {
+  font-size: 60px;
+  padding: 10px;
+}
+
+#features {
+  width: 100%;
+  padding-bottom: 150px;
+  background-color: #202020;
+}
+
+.feature {
+  width: 50%;
+  padding: 25px 25%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.feature-img {
+  max-width: 50%;
+  max-height: 100%;
+  border-radius: 20px;
+}
+
+.feature-body {
+  height: 100%;
+  width: 50%;
+  padding: 0px 20px;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.separator {
+  display: none;
+}
+
+@media only screen and (max-width: 1050px) {
+  .head {
+    text-align: center;
+    grid-area: header;
+    height: auto;
+    padding: 150px 0px;
+  }
+
+  #title {
+    font-size: 40px;
+    padding: 5px;
+  }
+
+  #description {
+    font-size: 13px;
+    padding: 2px;
+  }
+
+  .feature {
+    width: 90%;
+    padding: 25px 5%;
+    display: block;
+  }
+
+  .separator {
+    display: block;
+    width: 90%;
+    height: 1px;
+    margin: 0 5%;
+    background-color: white;
+  }
+
+  .feature-img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+  }
+
+  .feature-body {
+    width: 100%;
+    padding: 10px 10px;
+  }
+
+  .feature-name {
+    font-size: 30px;
+    line-height: normal;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #leaf {
+    float: left;
+    height: 80px;
+  }
+
+  .name {
+    font-weight: 100 !important;
+    font-size: 40px;
+    display: inline;
+  }
+
+  .head > a > button {
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    margin: 5px;
+  }
+}

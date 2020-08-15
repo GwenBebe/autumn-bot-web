@@ -1,0 +1,26 @@
+<div class="guild">
+  <div class="guildInfo">
+    <div class="guildIcon">
+      <div *ngIf="!icon" class="guildAcronym no-select">{{ nameAcronym }}</div>
+      <img *ngIf="icon" [src]="icon" class="guildIconImg" />
+    </div>
+    <h3 class="guildName">{{ name }}</h3>
+  </div>
+  <button
+    routerLink="/dashboard/{{ id }}"
+    *ngIf="guildInfo.botGuild"
+    mat-raised-button
+    color="primary"
+    class="guildBtn"
+  >
+    Dashboard
+  </button>
+  <button
+    (click)="invite()"
+    *ngIf="!guildInfo.botGuild"
+    mat-raised-button
+    class="guildBtn"
+  >
+    Invite Bot
+  </button>
+</div>

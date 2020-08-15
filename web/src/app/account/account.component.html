@@ -1,0 +1,20 @@
+<button *ngIf="!loggedIn" mat-button (click)="login()">
+  <h2><b>LOGIN</b></h2>
+</button>
+
+<div *ngIf="loggedIn">
+  <mat-menu #pfMenu="matMenu" xPosition="before">
+    <a routerLink="/dashboard" id="dashboardBtn"
+      ><button mat-menu-item><mat-icon>dashboard</mat-icon>Dashboard</button></a
+    >
+    <button mat-menu-item color="warn" (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>Logout
+    </button>
+  </mat-menu>
+  <button mat-button [matMenuTriggerFor]="pfMenu">
+    <img id="profilePic" [src]="avatarUrl" />
+    <span id="username"
+      ><B>{{ username | uppercase }}#{{ discriminator }}</B></span
+    >
+  </button>
+</div>

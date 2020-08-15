@@ -1,0 +1,15 @@
+#verification {
+  width: 100%;
+  text-align: left;
+  padding: 0px 30px;
+  box-sizing: border-box;
+}
+
+mat-form-field {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.toggle {
+  margin: 0px 0px 30px;
+}
