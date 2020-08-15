@@ -8,6 +8,12 @@ EXPOSE 8080
 
 COPY package.json /src/package.json
 COPY angular.json /src/angular.json
+COPY tsconfig.app.json /src/tsconfig.app.json
+COPY tsconfig.base.json /src/tsconfig.base.json
+COPY tsconfig.server.json /src/tsconfig.server.json
+COPY tsconfig.spec.json /src/tsconfig.spec.json
+COPY tsconfig.json /src/tsconfig.json
+COPY server.js /src/server.js
 
 RUN npm install
 
