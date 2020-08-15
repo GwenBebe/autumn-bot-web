@@ -17,6 +17,8 @@ COPY server.js /src/server.js
 
 RUN npm install
 
+RUN npm run build
+
 COPY . /src
 
 RUN ls
