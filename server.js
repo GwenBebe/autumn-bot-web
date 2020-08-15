@@ -9,7 +9,7 @@ app.use(
   createProxyMiddleware({
     target:
       process.env.NODE_ENV === "development"
-        ? "http://localhost:3000"
+        ? "http://localhost:4200"
         : "https://api.autumnbot.net",
     changeOrigin: true,
     cookieDomainRewrite: {

@@ -9,6 +9,8 @@ EXPOSE 8080
 COPY package.json /src/package.json
 RUN npm install
 
+RUN npm build
+
 COPY . /src
 
 CMD npm start
