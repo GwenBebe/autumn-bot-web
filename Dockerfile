@@ -7,6 +7,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends build-essential
 EXPOSE 8080
 
 COPY package.json /src/package.json
+COPY angular.json /src/angular.json
+
 RUN npm install
 
 RUN npm run build
