@@ -15,6 +15,8 @@ COPY tsconfig.json /src/tsconfig.json
 
 RUN npm install
 
+COPY . /src
+
 RUN npm run build
 
 RUN ls
