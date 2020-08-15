@@ -19,13 +19,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RedirectComponent } from './redirect/redirect.component';
-import {
-  LyThemeModule,
-  LY_THEME,
-  LY_THEME_NAME,
-  StyleRenderer,
-  LyTheme2,
-} from '@alyle/ui';
 import { MinimaDark } from '@alyle/ui/themes/minima';
 import { GuildComponent } from './guild/guild.component';
 import { GuildsComponent } from './guilds/guilds.component';
@@ -93,12 +86,7 @@ import { UploadImageComponent } from './upload-image/upload-image.component';
     MatTooltipModule,
     ColorSketchModule,
   ],
-  providers: [
-    StyleRenderer,
-    LyTheme2,
-    { provide: LY_THEME_NAME, useValue: 'minima-dark' },
-    { provide: LY_THEME, useClass: MinimaDark, multi: true },
-  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

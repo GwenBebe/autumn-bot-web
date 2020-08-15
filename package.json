@@ -23,7 +23,6 @@
   "proxyConfig": "src/proxy.conf.json",
   "private": true,
   "dependencies": {
-    "@alyle/ui": "^3.2.6",
     "@angular/animations": "~10.0.5",
     "@angular/cdk": "^9.2.4",
     "@angular/common": "^10.0.9",
