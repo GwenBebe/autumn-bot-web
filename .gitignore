@@ -2,6 +2,8 @@
 
 /src/config/development.ts
 
+docker-compose.yaml
+
 # compiled output
 /dist
 /tmp
