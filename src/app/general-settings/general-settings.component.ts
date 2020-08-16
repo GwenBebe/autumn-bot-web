@@ -92,11 +92,16 @@ export class GeneralSettingsComponent implements OnInit {
             }
           );
 
-        this.snackbar.open('Saved Changes', 'Close', {
-          duration: 5000,
-          verticalPosition: 'top',
-          horizontalPosition: 'center',
-        });
+        this.snackbar
+          .open('Saved Changes', 'Close', {
+            duration: 5000,
+            verticalPosition: 'top',
+            horizontalPosition: 'center',
+          })
+          .afterDismissed()
+          .subscribe(() => {
+            location.reload();
+          });
         this.fetchSettings();
       });
   }

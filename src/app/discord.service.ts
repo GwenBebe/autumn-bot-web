@@ -240,10 +240,16 @@ export class DiscordService {
     };
 
     try {
-      return this.http.post<ApiResponse>(this.updateUrl(guild), body, {
-        responseType: 'json',
-        withCredentials: true,
-      });
+      const response = this.http.post<ApiResponse>(
+        this.updateUrl(guild),
+        body,
+        {
+          responseType: 'json',
+          withCredentials: true,
+        }
+      );
+
+      return response;
     } catch (err) {
       console.log(err);
     }

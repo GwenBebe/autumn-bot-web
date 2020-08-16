@@ -122,11 +122,16 @@ export class ModerationSettingsComponent implements OnInit {
           );
 
         this.fetchSettings();
-        this.snackbar.open('Saved Changes', 'Close', {
-          duration: 5000,
-          verticalPosition: 'top',
-          horizontalPosition: 'center',
-        });
+        this.snackbar
+          .open('Saved Changes', 'Close', {
+            duration: 5000,
+            verticalPosition: 'top',
+            horizontalPosition: 'center',
+          })
+          .afterDismissed()
+          .subscribe(() => {
+            location.reload();
+          });
       });
   }
 }
