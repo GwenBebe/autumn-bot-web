@@ -19,6 +19,8 @@ app.use(
 );
 
 app.get("/*", function (req, res) {
+  console.log(`GET ${req.path} FROM ${req.ip}`);
+
   res.sendFile(
     path.join(__dirname, "dist/autumn-bot-web/browser", "index.html")
   );
