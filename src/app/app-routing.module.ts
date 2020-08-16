@@ -7,9 +7,11 @@ import { GuildPageComponent } from './guild-page/guild-page.component';
 import { VerificationComponent } from './verification/verification.component';
 import { ModerationComponent } from './moderation/moderation.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { CommandsPageComponent } from './commands-page/commands-page.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
+  { path: 'commands', component: CommandsPageComponent },
   { path: 'dashboard', component: GuildsComponent },
   { path: 'redirect', component: RedirectComponent },
   { path: 'dashboard/:guild', component: GuildPageComponent },
