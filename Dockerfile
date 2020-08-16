@@ -17,8 +17,6 @@ RUN npm install
 
 COPY . /src
 
-RUN npm cache clear
-
 RUN npm run build
 
 RUN ls
