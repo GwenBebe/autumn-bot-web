@@ -20,7 +20,10 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/custom-theme.scss", "src/styles.css"],
+            "styles": ["src/styles.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/stylings"]
+            },
             "scripts": []
           },
           "configurations": {
@@ -80,7 +83,7 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.css"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         },
@@ -158,5 +161,10 @@
   "defaultProject": "autumn-bot-web",
   "cli": {
     "analytics": "5cbbc2ea-06fd-4d47-9303-d94e9e86c1e4"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
   }
 }

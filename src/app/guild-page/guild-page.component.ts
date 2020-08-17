@@ -6,7 +6,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-guild-page',
   templateUrl: './guild-page.component.html',
-  styleUrls: ['./guild-page.component.css'],
+  styleUrls: ['./guild-page.component.scss'],
 })
 export class GuildPageComponent implements OnInit {
   guild: Guild;

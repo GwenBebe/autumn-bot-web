@@ -1,12 +1,50 @@
-<mat-toolbar color="primary" id="toolbar">
-  <button mat-button routerLink="/home">
-    <h1>Autumn Bot</h1>
-  </button>
-  <button mat-button routerLink="/commands">
-    Commands
-  </button>
-  <span class="navbar-fill"></span>
-  <app-account></app-account>
-</mat-toolbar>
+<body class="mat-typography {{ theme }}">
+  <mat-toolbar color="primary" id="toolbar">
+    <button mat-button routerLink="/home">
+      <h1>Autumn Bot</h1>
+    </button>
+    <button mat-button routerLink="/commands">
+      Commands
+    </button>
+    <button mat-button routerLink="/features">
+      Features
+    </button>
+    <span class="navbar-fill"></span>
+    <app-account></app-account>
+    <button mat-icon-button [matMenuTriggerFor]="themePicker">
+      <mat-icon>format_color_fill</mat-icon>
+    </button>
+    <mat-menu #themePicker="matMenu">
+      <button mat-menu-item (click)="changeTheme('')">
+        <mat-icon *ngIf="theme !== ''">radio_button_unchecked</mat-icon>
+        <mat-icon *ngIf="theme === ''">radio_button_checked</mat-icon>
+        Autumn
+      </button>
+      <button mat-menu-item (click)="changeTheme('teal-theme')">
+        <mat-icon *ngIf="theme !== 'teal-theme'"
+          >radio_button_unchecked</mat-icon
+        >
+        <mat-icon *ngIf="theme === 'teal-theme'">radio_button_checked</mat-icon>
+        Teal
+      </button>
+      <button mat-menu-item (click)="changeTheme('purple-theme')">
+        <mat-icon *ngIf="theme !== 'purple-theme'"
+          >radio_button_unchecked</mat-icon
+        >
+        <mat-icon *ngIf="theme === 'purple-theme'"
+          >radio_button_checked</mat-icon
+        >
+        Purple
+      </button>
+      <button mat-menu-item (click)="changeTheme('mint-theme')">
+        <mat-icon *ngIf="theme !== 'mint-theme'"
+          >radio_button_unchecked</mat-icon
+        >
+        <mat-icon *ngIf="theme === 'mint-theme'">radio_button_checked</mat-icon>
+        Mint
+      </button>
+    </mat-menu>
+  </mat-toolbar>
 
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+</body>
