@@ -1,4 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import "~@angular/material/theming";
+@import "./stylings/palettes.scss";
+
+@include mat-core();
+
+$autumn-primary: mat-palette($autumn-primary);
+$autumn-accent: mat-palette($autumn-accent, 800, 700, 900);
+$autumn-warn: mat-palette($autumn-warn);
+
+$autumn-theme: mat-dark-theme($autumn-primary, $autumn-accent, $autumn-warn);
+
+$teal-primary: mat-palette($teal-primary);
+$teal-accent: mat-palette($teal-accent, 800, 700, 900);
+$teal-warn: mat-palette($teal-warn);
+
+$teal-theme: mat-dark-theme($teal-primary, $teal-accent, $teal-warn);
+
+$purple-theme: mat-dark-theme($purple-primary, $purple-accent, $purple-warn);
+$purple-primary: mat-palette($purple-primary);
+$purple-accent: mat-palette($purple-accent, 800, 700, 900);
+$purple-warn: mat-palette($purple-warn);
+
+$purple-theme: mat-dark-theme($purple-primary, $purple-accent, $purple-warn);
+
+$mint-theme: mat-dark-theme($mint-primary, $mint-accent, $mint-warn);
+$mint-primary: mat-palette($mint-primary);
+$mint-accent: mat-palette($mint-accent, 800, 700, 900);
+$mint-warn: mat-palette($mint-warn);
+
+$mint-theme: mat-dark-theme($mint-primary, $mint-accent, $mint-warn);
+
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$custom-typography: mat-typography-config(
+  $font-family: "Poppins, sans-serif",
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500),
+); // Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
+@include mat-base-typography($custom-typography);
+
+// Override typography for a specific Angular Material components.
+@include mat-checkbox-typography($custom-typography);
+
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($custom-typography);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($autumn-theme);
+
+body {
+  height: 100%;
+}
+
+.teal-theme {
+  @include angular-material-theme($teal-theme);
+}
+
+.purple-theme {
+  @include angular-material-theme($purple-theme);
+}
+
+.mint-theme {
+  @include angular-material-theme($mint-theme);
+}
 
 * {
   font-family: Poppins;
@@ -9,37 +76,6 @@ body {
   background-color: #2b2929;
   color: white;
   text-align: center;
-}
-
-.mat-tab-label-content {
-  color: white;
-}
-
-.mat-form-field-appearance-legacy .mat-form-field-underline {
-  background-color: rgba(255, 255, 255, 0.42);
-}
-
-.mat-form-field-appearance-legacy .mat-form-field-label {
-  color: rgba(255, 255, 255, 0.54);
-}
-
-.mat-select-value {
-  color: rgba(255, 255, 255, 0.87);
-}
-
-.mat-form-field-label {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.mat-form-field-appearance-outline .mat-form-field-outline {
-  color: rgba(255, 255, 255, 0.185);
-}
-
-.mat-input-element::placeholder {
-  color: rgba(255, 255, 255, 0.42);
-}
-.mat-select-arrow {
-  color: rgba(255, 255, 255, 0.54);
 }
 
 code {

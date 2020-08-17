@@ -4,14 +4,16 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { GuildsComponent } from './guilds/guilds.component';
 import { RedirectComponent } from './redirect/redirect.component';
 import { GuildPageComponent } from './guild-page/guild-page.component';
-import { VerificationComponent } from './verification/verification.component';
-import { ModerationComponent } from './moderation/moderation.component';
-import { WelcomeComponent } from './welcome/welcome.component';
+import { VerificationComponent } from './guild-page/settings/verification/verification.component';
+import { ModerationComponent } from './guild-page/settings/moderation/moderation.component';
+import { WelcomeComponent } from './guild-page/settings/welcome/welcome.component';
 import { CommandsPageComponent } from './commands-page/commands-page.component';
+import { FeaturesPageComponent } from './features-page/features-page.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'commands', component: CommandsPageComponent },
+  { path: 'features', component: FeaturesPageComponent },
   { path: 'dashboard', component: GuildsComponent },
   { path: 'redirect', component: RedirectComponent },
   { path: 'dashboard/:guild', component: GuildPageComponent },

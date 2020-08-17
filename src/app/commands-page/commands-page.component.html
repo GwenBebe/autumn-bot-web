@@ -1,1 +1,47 @@
-<p>commands-page works!</p>
+<div class="commands">
+  <h1>Commands</h1>
+  <mat-form-field appearance="outline" class="search">
+    <mat-label>Search</mat-label>
+    <input matInput [formControl]="searchBox" />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+
+  <mat-tab-group
+    [selectedIndex]="selected.value"
+    (selectedIndexChange)="selected.setValue($event)"
+    >>
+    <mat-tab label="All">
+      <mat-accordion class="headers-align">
+        <mat-expansion-panel *ngFor="let command of filteredCommands">
+          <mat-expansion-panel-header>
+            <mat-panel-title> -{{ command.name }} </mat-panel-title>
+            <mat-panel-description>
+              {{ command.description }}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <span class="info"> {{ command.category }}</span>
+          <h3><b>Usage</b></h3>
+          <span class="info">{{ generateUsage(command) }}</span>
+          <h3 *ngIf="command.aliases.length"><b>Aliases</b></h3>
+          <span class="info">{{ command.aliases.join(", ") }}</span>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-tab>
+    <mat-tab *ngFor="let category of categories" label="{{ category.name }}">
+      <mat-accordion class="headers-align">
+        <mat-expansion-panel *ngFor="let command of category.commands">
+          <mat-expansion-panel-header>
+            <mat-panel-title> -{{ command.name }} </mat-panel-title>
+            <mat-panel-description>
+              {{ command.description }}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <h3><b>Usage</b></h3>
+          <span class="info">{{ generateUsage(command) }}</span>
+          <h3 *ngIf="command.aliases.length"><b>Aliases</b></h3>
+          <span class="info">{{ command.aliases.join(", ") }}</span>
+        </mat-expansion-panel>
+      </mat-accordion></mat-tab
+    >
+  </mat-tab-group>
+</div>

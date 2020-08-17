@@ -1,0 +1,39 @@
+#welcome {
+  width: 100%;
+  text-align: left;
+  padding: 0px 30px;
+  box-sizing: border-box;
+}
+
+mat-form-field {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.toggle {
+  margin: 0px 0px 30px;
+}
+
+.colorPickers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.colorPicker {
+  width: 30%;
+}
+
+#cardPreview {
+  text-align: center;
+  position: relative;
+  right: -50%;
+  transform: translateX(-50%);
+  width: 500px;
+}
+
+@media only screen and (max-width: 600px) {
+  #cardPreview {
+    width: 100%;
+  }
+}
