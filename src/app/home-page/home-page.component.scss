@@ -58,6 +58,10 @@
   content: url("/assets/leaf_mint.png");
 }
 
+:host-context(.konashi-theme) #leaf {
+  content: url("/assets/leaf_mint.png");
+}
+
 .name {
   font-weight: 100 !important;
   min-height: 100%;
@@ -101,6 +105,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .c2 {
+    position: relative;
+  }
+  .c2 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+  .c2 .letter {
+    transform-origin: 0 100%;
+    display: inline-block;
+  }
+  .c1 {
+    position: relative;
+  }
+  .c1 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+  .c1 .letter {
+    transform-origin: 0 100%;
+    display: inline-block;
   }
 
   #leaf {

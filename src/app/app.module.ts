@@ -44,6 +44,7 @@ import { CommandsPageComponent } from './commands-page/commands-page.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FeaturesPageComponent } from './features-page/features-page.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -94,7 +95,7 @@ import { FeaturesPageComponent } from './features-page/features-page.component';
     MatExpansionModule,
     MatDialogModule,
   ],
-  providers: [],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

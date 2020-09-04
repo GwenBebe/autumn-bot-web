@@ -43,6 +43,15 @@
         <mat-icon *ngIf="theme === 'mint-theme'">radio_button_checked</mat-icon>
         Mint
       </button>
+      <button mat-menu-item (click)="changeTheme('konashi-theme')">
+        <mat-icon *ngIf="theme !== 'konashi-theme'"
+          >radio_button_unchecked</mat-icon
+        >
+        <mat-icon *ngIf="theme === 'konashi-theme'"
+          >radio_button_checked</mat-icon
+        >
+        Konashi
+      </button>
     </mat-menu>
   </mat-toolbar>
 
